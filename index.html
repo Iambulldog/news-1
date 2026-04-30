@@ -15,71 +15,6 @@
     color: #1a1a1a;
     line-height: 1.7;
   }
-  /* ---------- Top Bar ---------- */
-  .top-bar {
-    background: #0a1929;
-    color: #cfd8e3;
-    font-size: 13px;
-    padding: 6px 0;
-    border-bottom: 2px solid #c8102e;
-  }
-  .top-bar-inner {
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 0 20px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    flex-wrap: wrap;
-    gap: 0 16px;
-  }
-  .top-bar .date {
-    font-weight: 500;
-    white-space: nowrap;
-  }
-  .top-bar .socials {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 0 10px;
-    align-items: center;
-  }
-  .top-bar .socials span {
-    margin-left: 10px;
-    cursor: pointer;
-    transition: color .2s;
-    white-space: nowrap;
-  }
-  .top-bar .socials span:first-child {
-    margin-left: 0;
-  }
-  .top-bar .socials span:hover { color: #ffcc29; }
-
-  @media (max-width: 700px) {
-    .top-bar-inner {
-      flex-direction: column;
-      align-items: flex-start;
-      padding: 0 8px;
-      gap: 2px 0;
-    }
-    .top-bar {
-      font-size: 12px;
-      padding: 4px 0;
-    }
-    .top-bar .date {
-      margin-bottom: 2px;
-      font-size: 12px;
-    }
-    .top-bar .socials {
-      gap: 0 6px;
-      font-size: 12px;
-      flex-wrap: wrap;
-    }
-    .top-bar .socials span {
-      margin-left: 6px;
-      margin-bottom: 2px;
-    }
-  }
-
   /* ---------- Header ---------- */
   header.masthead {
     background: #fffdf8;
@@ -109,16 +44,27 @@
     background: #0a1929;
     position: sticky;
     top: 0;
-    z-index: 50;
+    z-index: 1000;
+    border-bottom: 2px solid #c8102e;
   }
   .main-nav-inner {
     max-width: 1200px;
     margin: 0 auto;
     padding: 0 20px;
-    display: flex;
+    min-height: 48px;
+    display: grid;
+    grid-template-columns: 1fr auto 1fr;
     align-items: center;
-    justify-content: space-between;
+    column-gap: 18px;
     position: relative;
+  }
+  .nav-date {
+    grid-column: 3;
+    justify-self: end;
+    color: #cfd8e3;
+    font-size: 13px;
+    font-weight: 500;
+    white-space: nowrap;
   }
   .nav-hamburger {
     display: none;
@@ -139,6 +85,8 @@
     display: block;
   }
   nav.main-nav ul {
+    grid-column: 2;
+    justify-self: center;
     list-style: none;
     display: flex;
     flex-wrap: wrap;
@@ -165,12 +113,22 @@
 
   @media (max-width: 700px) {
     .main-nav-inner {
-      padding: 0 6px;
+      grid-template-columns: auto 1fr;
+      padding: 0 12px;
+      min-height: 50px;
+    }
+    .nav-date {
+      grid-column: 2;
+      justify-self: end;
+      font-size: 12px;
     }
     .nav-hamburger {
+      grid-column: 1;
+      grid-row: 1;
       display: flex;
     }
     nav.main-nav ul {
+      grid-column: 1 / -1;
       flex-direction: column;
       align-items: flex-start;
       background: #0a1929;
@@ -335,7 +293,7 @@
   .container {
     max-width: 1200px;
     margin: 30px auto;
-    padding: 0 20px;
+    padding: 0 10px;
     display: grid;
     grid-template-columns: 2fr 1fr;
     gap: 32px;
@@ -384,7 +342,7 @@
     font-size: 13px;
     font-style: italic;
   }
-  .featured .content { padding: 28px 32px 32px; }
+  .featured .content { padding: 28px 28px 28px; }
   .featured .category {
     display: inline-block;
     color: #c8102e;
@@ -588,20 +546,6 @@
 </head>
 <body>
 
-<!-- Top Bar -->
-<div class="top-bar">
-  <div class="top-bar-inner">
-    <span class="date">วันพฤหัสบดีที่ 30 เมษายน 2569</span>
-    <span class="socials">
-      <span>ติดตาม:</span>
-      <span>Facebook</span>
-      <span>X</span>
-      <span>YouTube</span>
-      <span>Line@</span>
-    </span>
-  </div>
-</div>
-
 <!-- Masthead -->
 <header class="masthead">
   <div class="brand">แจ้งข่าวเมือง<span class="accent">จันทร์</span></div>
@@ -612,6 +556,7 @@
 <nav class="main-nav">
   <div class="main-nav-inner">
     <div class="brand" style="font-size:20px;display:none;">แจ้งข่าวเมือง<span class="accent">จันทร์</span></div>
+    <span class="nav-date">วันศุกร์ที่ 9 ตุลาคม 2569</span>
     <div class="nav-hamburger" id="navHamburger" aria-label="เปิดเมนู" tabindex="0">
       <span></span>
       <span></span>
@@ -625,7 +570,6 @@
       <li><a href="#">ชุมชน</a></li>
       <li><a href="#">สิ่งแวดล้อม</a></li>
       <li><a href="#">ท่องเที่ยว</a></li>
-      <li><a href="#">ติดต่อกองบรรณาธิการ</a></li>
     </ul>
   </div>
 </nav>
@@ -683,31 +627,31 @@
       <div class="content">
         <span class="category">ข่าวเด่น · เศรษฐกิจท้องถิ่น</span>
         <h1>มนต์ไชยตระกูลชนะการประมูลท่าเรือ</h1>
-        <h2 class="subtitle">ชาวบ้านโวยหนัก หลัง "คงปุริม" ชนะประมูลท่าเรือ</h2>
+        <h2 class="subtitle">ชาวบ้านโวยหนัก ขอคงปุริมคืน</h2>
 
         <div class="meta">
           <span class="author">โดย กองบรรณาธิการ</span>
-          <span>30 เมษายน 2569 · 09:42 น.</span>
+          <span>9 ตุลาคม 2569 · 08:00 น.</span>
           <span>อ่านแล้ว 12,408 ครั้ง</span>
           <span>แชร์ 3,521</span>
         </div>
 
         <div class="article-body">
                     <p style="background:#fffbe7;padding:12px 18px;border-left:4px solid #c8102e;margin-bottom:10px;font-size:15px;">
-                      <strong>หมายเหตุ:</strong> พาดหัวข่าว "ชาวบ้านโวยหนัก ขอ &quot;คงปุริม&quot; คืนท่าเรือ" สะท้อนความไม่พอใจของชาวบ้านที่บริษัทหรือบุคคลในนาม "คงปุริม" (ผู้ชนะการประมูล) ได้สิทธิ์บริหารท่าเรือไป โดยชาวบ้านบางส่วนเห็นว่าควรเปิดโอกาสให้ชุมชนหรือกลุ่มอื่นเข้ามามีส่วนร่วมมากกว่านี้ ไม่ใช่ให้เอกชนรายเดียวถือครองสัมปทาน
+                      <strong>หมายเหตุ:</strong> พาดหัวข่าว "ชาวบ้านโวยหนัก ขอ &quot;คงปุริม&quot; คืนท่าเรือ" สะท้อนความไม่พอใจของชาวบ้านหลัง "มนต์ไชยตระกูล" ชนะการประมูล ขณะที่ "คงปุริม" เป็นฝ่ายแพ้ โดยชาวบ้านจำนวนมากเห็นว่าคงปุริมควรได้สิทธิ์บริหารท่าเรือต่อไป
                     </p>
                     <p style="background:#e7f7ff;padding:12px 18px;border-left:4px solid #0a7cc7;margin-bottom:18px;font-size:15px;">
-                      <strong>อีกมุมหนึ่ง:</strong> ฝ่ายสนับสนุนตระกูลคงปุริมให้เหตุผลว่า ตระกูลคงปุริมมีประสบการณ์และศักยภาพในการบริหารท่าเรือมายาวนาน มีความพร้อมทั้งด้านเงินทุนและบุคลากร จึงเหมาะสมกับการรับสัมปทานเพื่อพัฒนาท่าเรือให้เติบโตต่อไป
+                      <strong>อีกมุมหนึ่ง:</strong> ฝ่ายสนับสนุนคงปุริมให้เหตุผลว่า คงปุริมมีประสบการณ์และศักยภาพในการบริหารท่าเรือมายาวนาน มีความพร้อมทั้งด้านเงินทุนและบุคลากร จึงเหมาะสมกับการรับสัมปทานเพื่อพัฒนาท่าเรือให้เติบโตต่อไป แม้ผลประมูลครั้งนี้จะตกเป็นของมนต์ไชยตระกูล
                     </p>
           <p>
-            เมืองจันทร์ — บรรยากาศบริเวณท่าเรือพาณิชย์เช้าวันนี้คุกรุ่นด้วยเสียงโห่ร้องของชาวบ้านและเครือข่ายกว่า 800 คน หลังคณะกรรมการประมูลประกาศผลอย่างเป็นทางการให้ "คงปุริม" เป็นผู้ชนะการประมูลสัมปทานบริหารท่าเรือเป็นระยะเวลา 30 ปี ด้วยมูลค่าประมูลกว่า 4,800 ล้านบาท
+            เมืองจันทร์ — บรรยากาศบริเวณท่าเรือพาณิชย์เช้าวันนี้คุกรุ่นด้วยเสียงโห่ร้องของชาวบ้านและเครือข่ายกว่า 800 คน หลังคณะกรรมการประมูลประกาศผลอย่างเป็นทางการให้ "มนต์ไชยตระกูล" เป็นผู้ชนะการประมูลสัมปทานบริหารท่าเรือเป็นระยะเวลา 30 ปี ด้วยมูลค่าประมูลกว่า 4,800 ล้านบาท ขณะที่ "คงปุริม" เป็นฝ่ายแพ้
           </p>
           <p>
-            ผลการประมูลที่ประกาศออกมา สร้างความผิดหวังให้กับชาวบ้านและกลุ่มชุมชนที่เคยมีส่วนร่วมในการบริหารท่าเรือเดิมร่วมกับชาวประมงพื้นบ้านมากว่า 25 ปี
+            ผลการประมูลที่ประกาศออกมา สร้างความผิดหวังให้กับชาวบ้านและกลุ่มชุมชนที่อยากให้คงปุริมเป็นผู้ชนะและได้บริหารท่าเรือต่อ
           </p>
 
           <div class="pullquote">
-            "ท่าเรือนี้คือชีวิตของพวกเรา ไม่ใช่แค่ตัวเลขในเอกสาร เราขอให้ทบทวนผลการประมูล และคืนสิทธิ์ให้ชุมชนตามที่ควรจะเป็น"<br>
+            "ท่าเรือนี้คือชีวิตของพวกเรา ไม่ใช่แค่ตัวเลขในเอกสาร เราขอให้ทบทวนผลการประมูล และอยากเห็นคงปุริมได้กลับมาบริหารท่าเรือตามที่ชุมชนเชื่อมั่น"<br>
             <small style="font-size:14px; color:#6b6b6b; font-style:normal;">— นายวิทยา ใจซื่อ ตัวแทนชาวบ้าน</small>
           </div>
 
