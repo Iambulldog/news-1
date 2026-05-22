@@ -451,78 +451,6 @@
   }
   .second-news p { font-size: 16px; color: #2a2a2a; margin-bottom: 14px; }
 
-  /* ---------- Archive Block ---------- */
-  .archive-block {
-    background: #0a1929;
-    border-radius: 4px;
-    box-shadow: 0 4px 20px rgba(10,25,41,0.14);
-    margin-top: 24px;
-    overflow: hidden;
-    text-decoration: none;
-    display: block;
-    transition: transform .2s, box-shadow .2s;
-  }
-  .archive-block:hover {
-    transform: translateY(-2px);
-    box-shadow: 0 8px 28px rgba(10,25,41,0.22);
-  }
-  .archive-block-inner {
-    padding: 22px 28px;
-    display: flex;
-    gap: 20px;
-    align-items: flex-start;
-  }
-  .archive-date-badge {
-    flex-shrink: 0;
-    background: #c8102e;
-    color: #fff;
-    font-family: 'Prompt', sans-serif;
-    font-size: 11px;
-    font-weight: 700;
-    letter-spacing: 1px;
-    padding: 6px 12px;
-    border-radius: 2px;
-    text-align: center;
-    line-height: 1.4;
-    margin-top: 4px;
-  }
-  .archive-block-text .archive-label {
-    font-size: 11px;
-    color: #c8102e;
-    font-weight: 700;
-    letter-spacing: 2px;
-    text-transform: uppercase;
-    margin-bottom: 6px;
-    display: block;
-  }
-  .archive-block-text h3 {
-    font-family: 'Prompt', sans-serif;
-    font-size: 22px;
-    font-weight: 700;
-    color: #fff;
-    line-height: 1.3;
-    margin-bottom: 8px;
-  }
-  .archive-block-text p {
-    font-size: 14px;
-    color: #9eb0c2;
-    margin-bottom: 14px;
-    line-height: 1.6;
-  }
-  .archive-read-btn {
-    display: inline-block;
-    background: #c8102e;
-    color: #fff;
-    font-family: 'Prompt', sans-serif;
-    font-size: 13px;
-    font-weight: 600;
-    padding: 8px 18px;
-    border-radius: 2px;
-    letter-spacing: 0.5px;
-    transition: background .2s;
-  }
-  .archive-block:hover .archive-read-btn { background: #a50d25; }
-
   /* ---------- Sidebar ---------- */
   aside .widget {
     background: #fff;
@@ -628,21 +556,21 @@
 <nav class="main-nav">
   <div class="main-nav-inner">
     <div class="brand" style="font-size:20px;display:none;">แจ้งข่าวเมือง<span class="accent">จันทร์</span></div>
-    <span class="nav-date">วันศุกร์ที่ 9 ตุลาคม 2569</span>
+    <span class="nav-date">วันที่  31 ต.ค. 2552</span>
     <div class="nav-hamburger" id="navHamburger" aria-label="เปิดเมนู" tabindex="0">
       <span></span>
       <span></span>
       <span></span>
     </div>
     <ul id="mainNavMenu">
-      <li><a href="./index.html" class="active">หน้าแรก</a></li>
-      <li><a href="#">ข่าวเด่น</a></li>
+      <li><a href="./index.html">หน้าแรก</a></li>
+      <li><a href="./index.html">ข่าวเด่น</a></li>
       <li><a href="#">การเมืองท้องถิ่น</a></li>
       <li><a href="#">เศรษฐกิจ</a></li>
       <li><a href="#">ชุมชน</a></li>
       <li><a href="#">สิ่งแวดล้อม</a></li>
       <li><a href="#">ท่องเที่ยว</a></li>
-      <li><a href="./news-archive.html">ข่าวย้อนหลัง</a></li>
+      <li><a href="./news-archive.html" class="active">ข่าวย้อนหลัง</a></li>
     </ul>
   </div>
 </nav>
@@ -670,14 +598,9 @@
 
 <!-- Ticker -->
 <div class="ticker">
-  <div class="ticker-label">ข่าวด่วน</div>
+  <div class="ticker-label">ข่าวย้อนหลัง</div>
   <div class="ticker-content">
-    มนต์ไชยตระกูลชนะการประมูลท่าเรือ ด้วยมูลค่ากว่า 4,800 ล้านบาท •
-    ชาวบ้าน 12 หมู่บ้านรวมตัวประท้วง ยื่นหนังสือต่อผู้ว่าฯ •
-    เครือข่ายปกป้องท่าเรือเรียกร้องคืนสิทธิ์ให้กลุ่มคงปุริม •
-    มนต์ไชยตระกูลชนะการประมูลท่าเรือ ด้วยมูลค่ากว่า 4,800 ล้านบาท •
-    ชาวบ้าน 12 หมู่บ้านรวมตัวประท้วง ยื่นหนังสือต่อผู้ว่าฯ •
-    เครือข่ายปกป้องท่าเรือเรียกร้องคืนสิทธิ์ให้กลุ่มคงปุริม •
+    🔴 ข่าวด่วน — นักธุรกิจดัง "เสี่ยวิรัตน์" ถูกสังหารอุกอาจในรถหรู · คนร้ายปล้นทรัพย์กว่า 10 ล้านบาท · ตำรวจปูพรมล่าผู้ต้องสงสัย · คาดเบื้องหลังพิพาทธุรกิจ
   </div>
 </div>
 
@@ -691,60 +614,57 @@
     <article class="featured">
       <div class="image-wrap">
         <span class="badge">ข่าวเด่น</span>
-          <img src="image.png" alt="ข่าวเด่น" style="width:100%;height:auto;aspect-ratio:16/9;object-fit:cover;display:block;border-radius:2px;" />
+          <img src="old-news.jpg" alt="ข่าวเด่น" style="width:100%;height:auto;aspect-ratio:16/9;object-fit:cover;display:block;border-radius:2px;" />
       </div>
       <div class="image-caption">
-        ภาพ: ชาวบ้านและเครือข่ายชุมชนกว่า 800 คน รวมตัวหน้าท่าเรือ ชูป้ายเรียกร้องให้ทบทวนผลการประมูล / กองบรรณาธิการ แจ้งข่าวเมืองจันทร์
+        ภาพประกอบ: รถยนต์หรูของ "เสี่ยวิรัตน์" บนถนนสายเปลี่ยว ย่านที่เกิดเหตุสังหาร — 31 ตุลาคม 2552
       </div>
 
       <div class="content">
-        <span class="category">ข่าวเด่น · เศรษฐกิจท้องถิ่น</span>
-        <h1>มนต์ไชยตระกูลชนะการประมูล</h1>
-        <h2 class="subtitle">ชาวบ้านโวยหนัก ขอคงปุริมคืน</h2>
+        <span class="category">ข่าวเด่น · อาชญากรรม</span>
+        <h1>ดับสยอง! "เสี่ยวิรัตน์" ถูกสังหารอุกอาจในรถหรู</h1>
+        <h2 class="subtitle">คนร้ายบุกปล้นทรัพย์กว่า 10 ล้านบาท — ตำรวจปูพรมล่าคนร้ายด่วน</h2>
 
         <div class="meta">
-          <span class="author">โดย กองบรรณาธิการ</span>
-          <span>9 ตุลาคม 2569 · 08:00 น.</span>
-          <span>อ่านแล้ว 12,408 ครั้ง</span>
-          <span>แชร์ 3,521</span>
+          <span class="author">โดย กองบรรณาธิการข่าวอาชญากรรม</span>
+          <span>31 ต.ค. 2552 · 06:00 น.</span>
+          <span>อ่านแล้ว 92,408 ครั้ง</span>
+          <span>แชร์ 9,521</span>
         </div>
 
         <div class="article-body">
-                    <p style="background:#fffbe7;padding:12px 18px;border-left:4px solid #c8102e;margin-bottom:10px;font-size:15px;">
-                      <strong>หมายเหตุ:</strong> พาดหัวข่าว "ชาวบ้านโวยหนัก ขอ &quot;คงปุริม&quot; คืนท่าเรือ" สะท้อนความไม่พอใจของชาวบ้านหลัง "มนต์ไชยตระกูล" ชนะการประมูล ขณะที่ "คงปุริม" เป็นฝ่ายแพ้ โดยชาวบ้านจำนวนมากเห็นว่าคงปุริมควรได้สิทธิ์บริหารท่าเรือต่อไป
-                    </p>
-                    <p style="background:#e7f7ff;padding:12px 18px;border-left:4px solid #0a7cc7;margin-bottom:18px;font-size:15px;">
-                      <strong>อีกมุมหนึ่ง:</strong> ฝ่ายสนับสนุนคงปุริมให้เหตุผลว่า คงปุริมมีประสบการณ์และศักยภาพในการบริหารท่าเรือมายาวนาน มีความพร้อมทั้งด้านเงินทุนและบุคลากร จึงเหมาะสมกับการรับสัมปทานเพื่อพัฒนาท่าเรือให้เติบโตต่อไป แม้ผลประมูลครั้งนี้จะตกเป็นของมนต์ไชยตระกูล
-                    </p>
-          <p>
-            เมืองจันทร์ — บรรยากาศบริเวณท่าเรือพาณิชย์เช้าวันนี้คุกรุ่นด้วยเสียงโห่ร้องของชาวบ้านและเครือข่ายกว่า 800 คน หลังคณะกรรมการประมูลประกาศผลอย่างเป็นทางการให้ "มนต์ไชยตระกูล" เป็นผู้ชนะการประมูลสัมปทานบริหารท่าเรือเป็นระยะเวลา 30 ปี ด้วยมูลค่าประมูลกว่า 4,800 ล้านบาท ขณะที่ "คงปุริม" เป็นฝ่ายแพ้
+          <p style="background:#fff0f0;padding:12px 18px;border-left:4px solid #c8102e;margin-bottom:10px;font-size:15px;">
+            <strong>ข่าวด่วน:</strong> เหตุการณ์เกิดขึ้นเมื่อคืนวันที่ 31 ตุลาคม 2552 เจ้าหน้าที่ตำรวจได้รับแจ้งเหตุฉุกเฉินและรีบเดินทางไปยังที่เกิดเหตุ พบ "เสี่ยวิรัตน์" นักธุรกิจชื่อดัง นอนเสียชีวิตภายในรถยนต์หรูคาที่ สภาพที่พบชี้ให้เห็นว่าถูกสังหารอย่างอุกอาจ
           </p>
           <p>
-            ผลการประมูลที่ประกาศออกมา สร้างความผิดหวังให้กับชาวบ้านและกลุ่มชุมชนที่อยากให้คงปุริมเป็นผู้ชนะและได้บริหารท่าเรือต่อ
+            เมืองจันทร์ — คืนหนึ่งที่สั่นสะเทือนทั้งจังหวัด เมื่อ <strong>"เสี่ยวิรัตน์"</strong> นักธุรกิจคนดังผู้มีอิทธิพลในแวดวงเศรษฐกิจท้องถิ่น ถูกคนร้ายบุกสังหารอย่างเลือดเย็นภายในรถยนต์หรูของตนเอง พยานผู้อยู่ในบริเวณใกล้เคียงรายงานว่าได้ยินเสียงโกลาหล ก่อนมองเห็นชายฉกรรจ์หลายคนบุกเข้าล้อมรถ ปีนขึ้นไปทำร้ายผู้เสียหาย และกวาดต้อนทรัพย์สินออกไปอย่างรวดเร็วก่อนหลบหนีไปในความมืด
+          </p>
+          <p>
+            เบื้องต้นตำรวจประเมินมูลค่าทรัพย์สินที่ถูกโจรกรรมรวมกันไม่ต่ำกว่า <strong>10 ล้านบาท</strong> ทั้งเงินสด เครื่องประดับราคาแพง และสิ่งของมีค่าที่ "เสี่ยวิรัตน์" พกพาติดตัวในคืนนั้น ความป่าเถื่อนของเหตุการณ์ทำให้ชาวบ้านละแวกนั้นตกอยู่ในความหวาดกลัว
           </p>
 
           <div class="pullquote">
-            "ท่าเรือนี้คือชีวิตของพวกเรา ไม่ใช่แค่ตัวเลขในเอกสาร เราขอให้ทบทวนผลการประมูล และอยากเห็นคงปุริมได้กลับมาบริหารท่าเรือตามที่ชุมชนเชื่อมั่น"<br>
-            <small style="font-size:14px; color:#6b6b6b; font-style:normal;">— นายวิทยา ใจซื่อ ตัวแทนชาวบ้าน</small>
+            "มือปืนปีนขึ้นรถโดยไม่ลังเล ไม่มีใครคาดคิดว่าจะเกิดเหตุโหดเช่นนี้กลางเมือง คนร้ายทำงานราวกับวางแผนมาอย่างดี"<br>
+            <small style="font-size:14px; color:#6b6b6b; font-style:normal;">— พยานผู้เห็นเหตุการณ์ ณ ที่เกิดเหตุ</small>
           </div>
 
           <p>
-            แกนนำผู้ประท้วงระบุว่า ตลอดกระบวนการประมูล มีข้อสงสัยเรื่องความโปร่งใส โดยเฉพาะการกำหนดคุณสมบัติผู้ยื่นซองที่ทำให้กลุ่มชุมชนเสียเปรียบ และการเปลี่ยนแปลงเงื่อนไขในเอกสาร TOR ก่อนเปิดซองเพียง 7 วัน
+            พนักงานสอบสวนเปิดเผยว่า ทีมนักสืบได้ระดมกำลังปูพรมออกล่าคนร้ายทันที โดยสันนิษฐานว่าคนร้ายน่าจะเป็นกลุ่มที่วางแผนมาล่วงหน้า เนื่องจากรู้เส้นทางและจังหวะเวลาการเดินทางของ "เสี่ยวิรัตน์" เป็นอย่างดี ทั้งนี้นักสืบยังสาวไปถึงแนวโน้มว่าอาจมีความเชื่อมโยงกับปมพิพาททางธุรกิจที่คุกรุ่นมานาน
           </p>
           <p>
-            ด้านตัวแทนกลุ่มมนต์ไชยตระกูลได้ออกแถลงการณ์ยืนยันว่า บริษัทดำเนินการตามขั้นตอนทุกประการ พร้อมรับฟังข้อกังวลของชุมชน และจะเปิดเวทีหารือร่วมกับชาวบ้านในสัปดาห์หน้า
+            แหล่งข่าวใกล้ชิดกับครอบครัวผู้เสียชีวิตระบุว่า ช่วงระยะเวลาหลายเดือนก่อนหน้านี้ "เสี่ยวิรัตน์" เคยได้รับการคุกคามและข่มขู่เกี่ยวกับผลประโยชน์ทางธุรกิจ แต่ไม่ได้แจ้งความไว้ก่อน ขณะที่ตำรวจยังไม่ตัดโอกาสว่าเป็นการชิงทรัพย์แบบฉวยโอกาส แต่รูปแบบการกระทำดูมีการวางแผนอย่างรัดกุม
           </p>
           <p>
-            ผู้ว่าราชการจังหวัดรับหนังสือร้องเรียนจากแกนนำชาวบ้าน พร้อมรับปากจะตั้งคณะกรรมการตรวจสอบข้อเท็จจริงภายใน 15 วัน ขณะที่กลุ่มผู้ชุมนุมประกาศจะปักหลักประท้วงต่อเนื่องจนกว่าจะได้รับคำตอบที่ชัดเจน
+            คดีนี้กลายเป็นข่าวใหญ่ที่สั่นสะเทือนแวดวงธุรกิจจังหวัด เนื่องจาก "เสี่ยวิรัตน์" เป็นที่รู้จักและนับถือในหมู่นักลงทุนและชุมชนท้องถิ่น ตำรวจยืนยันจะเร่งสรุปสำนวนส่งอัยการโดยเร็วที่สุด พร้อมตั้งรางวัลนำจับคนร้ายสำหรับผู้ให้เบาะแสที่เป็นประโยชน์
           </p>
         </div>
 
         <div class="tags">
-          <span class="tag">#ท่าเรือคงปุริม</span>
-          <span class="tag">#มนต์ไชยตระกูล</span>
-          <span class="tag">#ประมูลท่าเรือ</span>
-          <span class="tag">#ชุมชนเมื่องจันทร์</span>
-          <span class="tag">#ความโปร่งใส</span>
+          <span class="tag">#เสี่ยวิรัตน์</span>
+          <span class="tag">#ฆ่าชิงทรัพย์</span>
+          <span class="tag">#อาชญากรรม</span>
+          <span class="tag">#ข่าวเด่น2552</span>
+          <span class="tag">#ตำรวจล่าคนร้าย</span>
         </div>
       </div>
     </article>
@@ -752,29 +672,14 @@
     <!-- Second News Block -->
     <article class="second-news">
       <span class="label">รายงานพิเศษ</span>
-      <h2>เปิดไทม์ไลน์ 25 ปี ท่าเรือคงปุริม จากชุมชนสู่สมรภูมิประมูล</h2>
+      <h2>เปิดโปรไฟล์ "เสี่ยวิรัตน์" — จากนักธุรกิจขวัญใจ สู่เหยื่อโจรมืออาชีพ</h2>
       <p>
-        ท่าเรือคงปุริมเริ่มก่อตั้งในปี 2544 โดยกลุ่มชาวประมงพื้นบ้าน 12 หมู่บ้านที่รวมตัวกันเป็นวิสาหกิจชุมชน เพื่อบริหารท่าเทียบเรือขนาดเล็กรองรับเรือประมงและสินค้าเกษตรในพื้นที่ ก่อนพัฒนาเป็นท่าเรือพาณิชย์ขนาดกลางที่มีรายได้ปีละกว่า 200 ล้านบาท
+        "เสี่ยวิรัตน์" เป็นที่รู้จักกันดีในแวดวงธุรกิจจังหวัดในฐานะนักลงทุนผู้มีวิสัยทัศน์ บริหารกิจการทั้งอสังหาริมทรัพย์ ค้าส่งสินค้าเกษตร และโรงงานแปรรูป รวมมูลค่ากว่าหลายร้อยล้านบาท บุคลิกอบอุ่น เข้าถึงง่าย ทำให้เขามีมิตรสหายในแวดวงกว้าง
       </p>
       <p>
-        การเปลี่ยนผ่านสัมปทานครั้งนี้ จึงไม่เพียงเป็นเรื่องเศรษฐกิจ แต่ยังเป็นคำถามสำคัญต่อการมีส่วนร่วมของชุมชนต่อทรัพยากรในท้องถิ่น
+        แต่เบื้องหลังความสำเร็จ แหล่งข่าวระบุว่าเขาอาจตกอยู่ท่ามกลางความขัดแย้งผลประโยชน์ทางธุรกิจมาระยะหนึ่ง ซึ่งตำรวจกำลังสาวหาว่าเป็นมูลเหตุสำคัญของโศกนาฏกรรมครั้งนี้หรือไม่
       </p>
     </article>
-
-    <!-- Archive Teaser Block -->
-    <a href="./news-archive.html" class="archive-block">
-      <div class="archive-block-inner">
-        <div class="archive-date-badge">
-          31<br>ต.ค.<br>2552
-        </div>
-        <div class="archive-block-text">
-          <span class="archive-label">ข่าวย้อนหลัง</span>
-          <h3>ดับสยอง! "เสี่ยวิรัตน์" ถูกสังหารอุกอาจในรถหรู — คนร้ายปล้นทรัพย์กว่า 10 ล้านบาท</h3>
-          <p>นักธุรกิจชื่อดังถูกคนร้ายบุกสังหารอย่างเลือดเย็น พยานเห็นมือปืนปีนรถก่อนปล้นทรัพย์และหลบหนี ตำรวจปูพรมล่ากลุ่มคนร้าย คาดปมชัดแย้งธุรกิจ</p>
-          <span class="archive-read-btn">อ่านข่าวฉบับเต็ม →</span>
-        </div>
-      </div>
-    </a>
 
   </main>
 
@@ -783,41 +688,39 @@
     <div class="widget">
       <div class="widget-title">ข่าวที่เกี่ยวข้อง</div>
       <div class="widget-body">
-        <a href="./news-archive.html" style="text-decoration:none;color:inherit;display:block;">
         <div class="related-item">
           <span class="num">01</span>
           <div class="text">
-            เปิดเอกสาร TOR ฉบับแก้ไขก่อนประมูลท่าเรือคงปุริม
-            <small>28 เมษายน 2569</small>
+            ตำรวจเปิดปฏิบัติการล่า — ตั้งด่านทุกเส้นทางออกจังหวัด
+            <small>31 ตุลาคม 2552</small>
           </div>
         </div>
-        </a>
         <div class="related-item">
           <span class="num">02</span>
           <div class="text">
-            ส.ส.เมืองจันทร์เตรียมยื่นกระทู้ตรวจสอบการประมูล
-            <small>29 เมษายน 2569</small>
+            พยานชี้ตัว มือปืนปีนรถ-โจรกรรมเสร็จสิ้นใน 3 นาที
+            <small>31 ตุลาคม 2552</small>
           </div>
         </div>
         <div class="related-item">
           <span class="num">03</span>
           <div class="text">
-            รู้จัก "มนต์ไชยตระกูล" กลุ่มทุนใหญ่ภาคตะวันออก
-            <small>30 เมษายน 2569</small>
+            เปิดโปรไฟล์ผู้เสียหาย — "เสี่ยวิรัตน์" นักธุรกิจผู้มีอิทธิพล
+            <small>31 ตุลาคม 2552</small>
           </div>
         </div>
         <div class="related-item">
           <span class="num">04</span>
           <div class="text">
-            วิสาหกิจคงปุริม กับ 25 ปีบนท่าเรือชุมชน
-            <small>30 เมษายน 2569</small>
+            สายสืบชี้เบาะแส — ปมพิพาทธุรกิจอาจอยู่เบื้องหลัง
+            <small>1 พฤศจิกายน 2552</small>
           </div>
         </div>
         <div class="related-item">
           <span class="num">05</span>
           <div class="text">
-            ผู้ว่าฯ ตั้งคณะกรรมการตรวจสอบข้อเท็จจริงใน 15 วัน
-            <small>30 เมษายน 2569</small>
+            ครอบครัวแถลง ขอความยุติธรรม — ตั้งรางวัลนำจับ 5 แสน
+            <small>1 พฤศจิกายน 2552</small>
           </div>
         </div>
       </div>
@@ -827,22 +730,22 @@
       <div class="widget-title">ตัวเลขที่น่ารู้</div>
       <div class="stats-row">
         <div class="stat-box">
-          <div class="num-big">4,800</div>
-          <div class="num-label">ล้านบาท · มูลค่าประมูล</div>
+          <div class="num-big">10+</div>
+          <div class="num-label">ล้านบาท · ทรัพย์ถูกโจรกรรม</div>
         </div>
         <div class="stat-box">
-          <div class="num-big">30</div>
-          <div class="num-label">ปี · ระยะสัมปทาน</div>
+          <div class="num-big">3</div>
+          <div class="num-label">นาที · เวลาก่อเหตุ</div>
         </div>
       </div>
       <div class="stats-row">
         <div class="stat-box">
-          <div class="num-big">12</div>
-          <div class="num-label">หมู่บ้าน · ชุมชนต้นทาง</div>
+          <div class="num-big">5+</div>
+          <div class="num-label">คน · จำนวนคนร้าย (ประมาณ)</div>
         </div>
         <div class="stat-box">
-          <div class="num-big">800+</div>
-          <div class="num-label">ชาวบ้าน · ผู้ร่วมชุมนุม</div>
+          <div class="num-big">500K</div>
+          <div class="num-label">บาท · รางวัลนำจับ</div>
         </div>
       </div>
     </div>
